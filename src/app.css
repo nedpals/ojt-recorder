@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+.note-item.animate-delete {
+  transform-origin: top;
+  animation: deleteNoteItemAnimation 0.1s ease forwards;
+  animation-delay: 0.1s;
+}
+
+.note-item.animate-delete .note-item-content {
+  animation: deleteNoteItemContentAnimation 0.1s ease forwards;
+}
+
+@keyframes deleteNoteItemAnimation {
+  0% {
+    transform: scaleY(100%);
+  }
+  100% {
+    transform: scaleY(0%);
+  }
+}
+
+@keyframes deleteNoteItemContentAnimation {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
